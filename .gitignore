@@ -1,0 +1,35 @@
+# Credenciales y secrets
+.env
+.env.local
+secrets/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Data assets (pesados, no se versionan)
+data/raw_tracks/
+data/processed/
+data/videos/
+data/thumbnails/
+assets/loops/
+assets/avatar/
+assets/fonts/
+
+# Competitor research (business intel, no se publica)
+data/competitor_research/
+
+# Logs
+logs/
+*.log
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+data/grade_comparison/
+assets/overlays/

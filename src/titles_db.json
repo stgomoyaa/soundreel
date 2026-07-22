@@ -1,0 +1,277 @@
+{
+  "version": "1.0",
+  "language": "en",
+  "domain": "ambient_sad_lofi_youtube",
+  "notes": "BBDD extraída de ~700 títulos. Cada template tiene un peso (frecuencia observada). Los slots son intercambiables.",
+  "categories": [
+    "sleep",
+    "lost_love",
+    "memory",
+    "comfort",
+    "dissociation",
+    "solitude",
+    "time_marker",
+    "playlist",
+    "trigger",
+    "vulnerability",
+    "use_case",
+    "philosophical"
+  ],
+  "templates": [
+    {"id": "sleep_time", "pattern": "it's {time}, {sleep_imperative}", "weight": 14, "category": "sleep"},
+    {"id": "okay_soft", "pattern": "it's okay, {soft_imperative}", "weight": 11, "category": "comfort"},
+    {"id": "state_imperative", "pattern": "{state}, {sleep_imperative}", "weight": 8, "category": "sleep"},
+    {"id": "she_was", "pattern": "she was {her_descriptor}", "weight": 12, "category": "lost_love"},
+    {"id": "she_is", "pattern": "she is {her_descriptor}", "weight": 6, "category": "lost_love"},
+    {"id": "i_still_her", "pattern": "i still {her_verb} {her_object}", "weight": 12, "category": "lost_love"},
+    {"id": "i_her", "pattern": "i {her_verb} {her_object}", "weight": 6, "category": "lost_love"},
+    {"id": "i_wish_her", "pattern": "i wish {her_wish}", "weight": 4, "category": "lost_love"},
+    {"id": "she_action", "pattern": "she {she_past_action}", "weight": 4, "category": "lost_love"},
+    {"id": "maybe_another", "pattern": "maybe in another {life_noun}", "weight": 8, "category": "dissociation"},
+    {"id": "feels_like_playlist", "pattern": "what it feels like to {feels_like_verb} (playlist)", "weight": 8, "category": "playlist"},
+    {"id": "feels_like_no_tag", "pattern": "what it feels like to {feels_like_verb}", "weight": 4, "category": "playlist"},
+    {"id": "play_this", "pattern": "play this {trigger_phrase}", "weight": 6, "category": "trigger"},
+    {"id": "listen_this", "pattern": "listen to this {trigger_phrase}", "weight": 3, "category": "trigger"},
+    {"id": "hour_only", "pattern": "{time}.", "weight": 3, "category": "time_marker"},
+    {"id": "emotion_mp3", "pattern": "{emotion_noun}.mp3", "weight": 4, "category": "solitude"},
+    {"id": "emotion_dot", "pattern": "{emotion_noun}.", "weight": 4, "category": "solitude"},
+    {"id": "adj_memories", "pattern": "{memory_adjective} memories.", "weight": 6, "category": "memory"},
+    {"id": "reassurance", "pattern": "{future_assurance}", "weight": 5, "category": "comfort"},
+    {"id": "forget_obj", "pattern": "forget {forget_object}", "weight": 4, "category": "memory"},
+    {"id": "forget_and", "pattern": "forget {forget_object} and {soft_imperative}", "weight": 3, "category": "memory"},
+    {"id": "do_you_remember", "pattern": "do you remember {memory_target}", "weight": 3, "category": "memory"},
+    {"id": "you_were", "pattern": "you {you_descriptor}", "weight": 4, "category": "comfort"},
+    {"id": "stay_here", "pattern": "{stay_phrase}", "weight": 3, "category": "comfort"},
+    {"id": "nothing_feels", "pattern": "nothing {nothing_phrase}", "weight": 3, "category": "dissociation"},
+    {"id": "is_this_real", "pattern": "is this {reality_noun}?", "weight": 3, "category": "dissociation"},
+    {"id": "lost_in", "pattern": "lost in {lost_in_object}", "weight": 3, "category": "dissociation"},
+    {"id": "memory_of", "pattern": "{memory_target}", "weight": 2, "category": "memory"},
+    {"id": "maybe_self_blame", "pattern": "maybe {self_blame}", "weight": 8, "category": "vulnerability"},
+    {"id": "i_think_self", "pattern": "i think {self_state}", "weight": 5, "category": "vulnerability"},
+    {"id": "i_self_descriptor", "pattern": "i {self_descriptor}", "weight": 6, "category": "vulnerability"},
+    {"id": "whats_wrong", "pattern": "what's wrong with {wrong_subject}", "weight": 4, "category": "vulnerability"},
+    {"id": "use_this_for", "pattern": "use this for {use_case_activity}", "weight": 9, "category": "use_case"},
+    {"id": "music_for_activity", "pattern": "music for {use_case_audience}", "weight": 7, "category": "use_case"},
+    {"id": "music_to_verb", "pattern": "music to {use_case_verb}", "weight": 6, "category": "use_case"},
+    {"id": "this_is_for", "pattern": "this is for {use_case_audience}", "weight": 4, "category": "use_case"},
+    {"id": "is_it_state", "pattern": "is it {philosophical_state}?", "weight": 8, "category": "philosophical"},
+    {"id": "does_matter", "pattern": "does {existential_subject} matter?", "weight": 5, "category": "philosophical"},
+    {"id": "what_if", "pattern": "what if {hypothetical}", "weight": 4, "category": "philosophical"},
+    {"id": "why_question", "pattern": "why does {why_subject}?", "weight": 3, "category": "philosophical"}
+  ],
+  "slots": {
+    "time": [
+      "2am", "3am", "4am", "5am", "6am", "1am",
+      "late", "midnight", "2 am", "3 am", "4 am", "5 am"
+    ],
+    "sleep_imperative": [
+      "go to sleep", "sleep now", "sleep well",
+      "you should sleep", "you should be asleep",
+      "get some sleep", "rest now", "close your eyes",
+      "you need to rest", "you can sleep now",
+      "rest here", "you need it", "you need to sleep"
+    ],
+    "soft_imperative": [
+      "go to sleep", "rest now", "sleep now", "slow down",
+      "calm down", "close your eyes", "you can rest now",
+      "you can sleep now", "let go", "sleep well",
+      "get some sleep", "you should sleep", "just let go",
+      "stop thinking", "sleep"
+    ],
+    "state": [
+      "you're tired", "you seem tired", "you need sleep",
+      "you need rest", "you can't sleep", "you look tired",
+      "she's gone", "i'm tired"
+    ],
+    "her_descriptor": [
+      "just a dream", "only a dream", "only a memory",
+      "never real", "never truly real", "never mine",
+      "never coming back", "my everything", "so pretty",
+      "lovely", "only temporary", "home", "everything",
+      "just a memory", "the one", "all i needed"
+    ],
+    "her_verb": [
+      "miss", "love", "need", "want", "remember",
+      "dream of", "think about", "see", "hear",
+      "can't forget", "still see"
+    ],
+    "her_object": [
+      "her", "her smile", "her laugh", "her voice",
+      "her touch", "what we had", "the way she looked at me",
+      "her everywhere", "her in my dreams", "about her",
+      "her more at night", "her more these days"
+    ],
+    "her_wish": [
+      "she stayed", "we could start over", "it never ended",
+      "i still had her", "she remembered me", "i could see her again",
+      "we had more time"
+    ],
+    "she_past_action": [
+      "was lovely", "felt like home", "left without saying goodbye",
+      "never said goodbye", "broke my heart", "forgot about me",
+      "was my everything", "was never coming back"
+    ],
+    "life_noun": [
+      "life", "lifetime", "world", "universe", "reality", "dream"
+    ],
+    "feels_like_verb": [
+      "be alone", "be lost", "miss someone", "forget",
+      "let go", "move on", "fade away", "drift away",
+      "escape reality", "heal", "say goodbye", "slow down",
+      "rest", "dream again", "be a memory", "be a ghost",
+      "be empty", "be broken", "be sad", "be hopeless",
+      "be forgotten", "be abandoned", "be haunted by the past",
+      "be alone in a crowd", "be lost in life",
+      "be completely alone", "be in your own head",
+      "lose someone", "be in the backrooms", "finally rest",
+      "be left behind", "fade into nothing", "forgive yourself"
+    ],
+    "trigger_phrase": [
+      "when you feel sad", "when life feels hard",
+      "when it's late at night", "before it's too late",
+      "before december ends", "as soon as december begins",
+      "as soon as 2026 begins", "to fall asleep in 5 minutes",
+      "before it's deleted", "when you need it most",
+      "before march begins", "before you sleep",
+      "as soon as march begins", "when you can't sleep",
+      "before you give up", "before sunrise"
+    ],
+    "emotion_noun": [
+      "sadness", "loneliness", "hopelessness", "solitude",
+      "regret", "melancholy", "peace", "insomnia",
+      "isolation", "childhood", "dysphoria", "silence",
+      "nostalgia", "absence", "emptiness", "terminal",
+      "hate", "exit life"
+    ],
+    "memory_adjective": [
+      "distant", "forgotten", "broken", "endless",
+      "lonely", "painful", "hurtful", "childhood",
+      "youthful", "midnight", "fading", "real",
+      "old", "rejected", "empty", "lost", "stolen"
+    ],
+    "future_assurance": [
+      "everything will be okay", "you will be okay",
+      "you're okay", "it will be okay", "you're safe here",
+      "it's going to be okay", "you found a place to rest",
+      "you are safe here", "you're not alone"
+    ],
+    "forget_object": [
+      "her", "about her", "about it", "about me",
+      "it all", "everything", "this", "the past"
+    ],
+    "you_descriptor": [
+      "are safe here", "were home once", "found a place to rest",
+      "need some rest", "deserve to rest", "made it",
+      "should sleep", "are tired", "are not alone",
+      "recognise this place"
+    ],
+    "stay_phrase": [
+      "stay here, if you feel sad", "stay a little longer",
+      "stay a while longer", "you can stay here",
+      "rest here, you need it", "take a break here, you need it"
+    ],
+    "nothing_phrase": [
+      "feels the same anymore", "lasts forever",
+      "feels real anymore", "is certain anymore",
+      "matters now", "stays the same"
+    ],
+    "reality_noun": [
+      "real", "a dream", "reality", "even real", "really happening"
+    ],
+    "lost_in_object": [
+      "a dream", "a memory", "thoughts", "the past",
+      "her eyes", "the silence", "another life"
+    ],
+    "memory_target": [
+      "our last summer", "the old days", "when we were kids",
+      "the night we met", "the way it used to be",
+      "your childhood", "her smile", "the way home",
+      "the place we used to go", "her room"
+    ],
+    "self_blame": [
+      "i'm the problem", "it's me", "i'm too much",
+      "i'm not enough", "i ruined everything", "i deserve this",
+      "i can't be loved", "i was the bad one"
+    ],
+    "self_state": [
+      "i'm broken", "i'm done", "i can't do this anymore",
+      "i feel nothing", "i'm losing it", "i'm not okay",
+      "i'm forgetting myself", "i'm fading"
+    ],
+    "self_descriptor": [
+      "ruined everything", "can't do this anymore", "feel nothing",
+      "miss who i used to be", "don't recognize myself",
+      "lost the best of me", "wasn't enough", "stopped trying",
+      "want to disappear"
+    ],
+    "wrong_subject": [
+      "me", "us", "this", "my heart", "my head"
+    ],
+    "use_case_activity": [
+      "whatever masterpiece you're cooking", "writing at 2am",
+      "the long drive home", "rainy commutes",
+      "reading until you fall asleep", "your existential crisis",
+      "the night shift", "drawing alone", "studying at midnight",
+      "those quiet hours", "missing someone you can't have",
+      "the day you stay in bed", "letting yourself feel"
+    ],
+    "use_case_audience": [
+      "the lonely ones", "the night owls", "the heartbroken",
+      "anyone who can't sleep", "the overthinkers",
+      "the people who feel too much", "anyone missing someone",
+      "the soft hearted", "the ones who stay up too late",
+      "the broken parts of you", "the version of you that's tired",
+      "the ones still healing"
+    ],
+    "use_case_verb": [
+      "fall asleep to", "cry to", "miss her to",
+      "write to", "drive home to", "let go to",
+      "feel something to", "watch the rain to",
+      "make peace with the past", "stop overthinking",
+      "shut your brain off", "feel less alone"
+    ],
+    "philosophical_state": [
+      "even worth it", "really worth it", "all real",
+      "ok to feel this way", "always going to hurt this much",
+      "supposed to be this hard", "meant to be"
+    ],
+    "existential_subject": [
+      "any of this", "love", "memory",
+      "the past", "missing her", "feeling this much",
+      "trying"
+    ],
+    "hypothetical": [
+      "she never existed", "we never met",
+      "i never said goodbye", "it never ended",
+      "i'd done things differently", "she comes back",
+      "this is all we get", "tonight never ends"
+    ],
+    "why_subject": [
+      "this still hurt", "memory work like this",
+      "the rain remind me of her", "it still feel this real",
+      "missing her never stop"
+    ]
+  },
+  "static_titles": [
+    "she's gone.",
+    "i'll never forget her",
+    "nothing feels the same anymore",
+    "nothing lasts forever",
+    "she was only a dream",
+    "i miss the old me",
+    "we were just kids",
+    "i still miss her",
+    "calm your inner voice",
+    "the end of our story",
+    "our youth is gone",
+    "she felt like home",
+    "burn it all down",
+    "memory reboot",
+    "i feel nothing",
+    "i'm nobody",
+    "we could've been forever",
+    "music for your funeral",
+    "your final moments",
+    "could this be real?"
+  ]
+}

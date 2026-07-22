@@ -1,0 +1,31 @@
+# Crontab para usuario ambient en VPS
+# Aplicar: crontab vps_cron.txt
+# Ver con: crontab -l
+# Timezone del sistema: America/Santiago (ver vps_provision.sh)
+
+# Path para que cron encuentre python del venv
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash
+PROJECT=/opt/ambient_machine
+VENV_PY=$PROJECT/.venv/bin/python
+
+# ════════════════════════════════════════════════════════
+# UPLOADS — cada hora chequea si hay scheduled <= now
+# (orchestrator run sube todos los pending del canal configurado en CHANNEL_NAME)
+# ════════════════════════════════════════════════════════
+0 * * * * cd $PROJECT && $VENV_PY -m src.orchestrator run >> $PROJECT/logs/cron_upload.log 2>&1
+
+# ════════════════════════════════════════════════════════
+# DAILY REPORT — 23:00 Santiago
+# ════════════════════════════════════════════════════════
+0 23 * * * cd $PROJECT && $VENV_PY -m src.orchestrator daily-report >> $PROJECT/logs/cron_report.log 2>&1
+
+# ════════════════════════════════════════════════════════
+# LOG ROTATION — limpia logs > 30 días
+# ════════════════════════════════════════════════════════
+0 4 * * 0 find $PROJECT/logs -name '*.log' -mtime +30 -delete
+
+# ════════════════════════════════════════════════════════
+# DISK CHECK — alerta si /opt > 80%
+# ════════════════════════════════════════════════════════
+0 8 * * * USAGE=$(df /opt | tail -1 | awk '{print $5}' | tr -d '%'); [ "$USAGE" -gt 80 ] && echo "⚠️ /opt at ${USAGE}%" | $VENV_PY -c "import sys,os,requests; t=os.getenv('TELEGRAM_BOT_TOKEN'); c=os.getenv('TELEGRAM_CHAT_ID'); requests.post(f'https://api.telegram.org/bot{t}/sendMessage', json={'chat_id':c,'text':sys.stdin.read()})"
