@@ -11,9 +11,12 @@ your own music (e.g. generated in Suno) and your own channel.
 
 ## Output sample
 
-<!-- TODO(stgomoyaa): drop 2 screenshots here — one generated thumbnail and
-one frame from a finished long-form video. The pipeline is visual; a reader
-needs to see the output to believe it. -->
+Two frames from a real run of the pipeline — the kind of scene it loops into
+long-form videos, and the color-graded output:
+
+![Visual loop frame](docs/media/visual-loop-frame.png)
+
+![Color grade sample](docs/media/grade-sample.png)
 
 ## What it does
 
