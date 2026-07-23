@@ -9,6 +9,12 @@ Telegram notifications.
 It automates the repetitive production and publishing work. You still bring
 your own music (e.g. generated in Suno) and your own channel.
 
+## Output sample
+
+<!-- TODO(stgomoyaa): drop 2 screenshots here — one generated thumbnail and
+one frame from a finished long-form video. The pipeline is visual; a reader
+needs to see the output to believe it. -->
+
 ## What it does
 
 ```txt
